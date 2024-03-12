@@ -7,7 +7,7 @@ import { ModelDefinition, MongooseModule } from '@nestjs/mongoose';
   imports: [MongooseModule.forRootAsync({
     imports: [ConfigModule],
     useFactory: () => ({
-      uri: 'mongodb://localhost/sleepr'
+      uri: 'mongodb://mongo:27017/sleepr'
     }),
     inject: [ConfigService],
   })],

@@ -1,11 +1,15 @@
 version: '3.8'
 services:
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb
+  reservations:
+    build:
+      context: .
+      dockerfile: ./apps/reservations/Dockerfile
+      target: development
+    command: pnpm run start:dev reservations
     ports:
-      - 27017:27017
+      - '3000:3000'
     volumes:
-      - mongodbdata:/data/db
-volumes:
-  mongodbdata:
+      - .:/usr/src/app
+  mongo:
+    image: mongo:latest
+    
