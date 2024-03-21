@@ -12,7 +12,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'push',
-      '-t',
       'southamerica-east1-docker.pkg.dev/sleepr-417914/reservations/production',
     ]
   ## Auth
@@ -28,7 +27,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'push',
-      '-t',
       'southamerica-east1-docker.pkg.dev/sleepr-417914/auth/production',
     ]
   ## Payments
@@ -44,7 +42,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'push',
-      '-t',
       'southamerica-east1-docker.pkg.dev/sleepr-417914/payments/production',
     ]
     ## Notifications
@@ -60,7 +57,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'push',
-      '-t',
       'southamerica-east1-docker.pkg.dev/sleepr-417914/notifications/production',
     ]
   
