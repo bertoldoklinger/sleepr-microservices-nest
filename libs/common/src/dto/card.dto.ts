@@ -13,4 +13,5 @@ export class CardDto {
 
   @IsCreditCard()
   number: string
+
 }
