@@ -15,5 +15,37 @@ spec:
         app: auth
     spec:
       containers:
-      - image: southamerica-east1-docker.pkg.dev/sleepr-417914/auth/production
-        name: auth
+        - image: southamerica-east1-docker.pkg.dev/sleepr-417914/auth/production
+          name: auth
+          env:
+            - name: MONGODB_URI
+              value: mongodb+srv://sleeprnestapp:zRzP3lFfEIgAx9hl@sleepr.vwejipw.mongodb.net
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwt
+                  key: jwtSecret
+            - name: JWT_EXPIRATION
+              value: '3600'
+            - name: TCP_PORT
+              value: '3002'
+            - name: HTTP_PORT
+              value: '3003'
+          ports:
+            - containerPort: 3002
+            - containerPort: 3003
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ##
