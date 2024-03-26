@@ -20,6 +20,20 @@ spec:
         env:
           - name: PORT
             value: '3000'
+          - name: GOOGLE_OAUTH_CLIENT_ID
+            value: 698916071043-rvgc7ntgmsk7i3mio34jb156pfckqu37.apps.googleusercontent.com
+          - name: GOOGLE_OAUTH_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: google
+                key: clientSecret
+          - name: GOOGLE_OAUTH_REFRESH_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: google
+                key: refreshToken
+          - name: SMTP_USER
+            value: bertoldokbrj@gmail.com
         ports:
           - containerPort: 3000
         
