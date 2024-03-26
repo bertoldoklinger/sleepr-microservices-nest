@@ -26,9 +26,7 @@ export class AuthService {
       httpOnly: true,
       expires,
     })
-  }
 
-  getHello(): string {
-    return 'Hello World!';
+    return token
   }
 }
